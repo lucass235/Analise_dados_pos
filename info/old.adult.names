@@ -1,0 +1,87 @@
+1. Título do Banco de Dados: adulto
+2. Fontes:
+   (a) Proprietários originais do banco de dados (nome/telefone/endereço/endereço de e-mail)
+       US Census Bureau.
+   (b) Doador do banco de dados (nome/telefone/endereço/endereço de e-mail)
+       Ronny Kohavi e Barry Becker, 
+       Mineração de Dados e Visualização
+       Silicon Graphics.
+       e-mail: ronnyk@sgi.com
+   (c) Data de recebimento (os bancos de dados podem mudar ao longo do tempo sem mudança de nome!)
+       19/05/96
+3. Uso Anterior:
+   (a) Referência completa do artigo onde foi descrito/usado
+        @inproceedings{kohavi-nbtree,
+           autor={Ron Kohavi},
+           título={Aumentando a Precisão dos Classificadores Naive-Bayes: um 
+                  Híbrido de Árvore de Decisão},
+           livro de atas={Proceedings of the Second International Conference on
+                      Knowledge Discovery and Data Mining},
+           ano = 1996,
+           páginas={a aparecer}}
+   (b) Indicação de quais atributos estavam sendo previstos 
+       Salário maior ou menor que 50.000.
+   (b) Indicação dos resultados do estudo (ou seja, é um bom domínio para usar?)
+       Domínio difícil com um bom número de registros.
+       Os seguintes resultados foram obtidos usando MLC++ com configurações padrão
+       para os algoritmos mencionados abaixo.
+        
+           Algoritmo               Erro
+        -- ----------------        -----
+        1  C4.5                    15.54
+        2  C4.5-auto               14.46
+        3  C4.5 regras             14.94
+        4  Voted ID3 (0.6)         15.64
+        5  Voted ID3 (0.8)         16.47
+        6  T2                      16.84
+        7  1R                      19.54
+        8  NBTree                  14.10
+        9  CN2                     16.00
+        10 HOODG                   14.82
+        11 FSS Naive Bayes         14.05
+        12 IDTM (Tabela de decisão) 14.46
+        13 Naive-Bayes             16.12
+        14 Vizinho mais próximo (1) 21.42
+        15 Vizinho mais próximo (3) 20.35
+        16 OC1                     15.04
+        17 Pebls                   Travou. Desconhecido por quê (os limites FORAM aumentados)
+
+4. Informações Relevantes do Parágrafo:
+   A extração foi feita por Barry Becker do banco de dados do Censo de 1994. Um conjunto
+    de registros razoavelmente limpos foi extraído usando as seguintes condições:
+    ((AAGE>16) && (AGI>100) && (AFNLWGT>1)&& (HRSWK>0))
+
+5. Número de Instâncias
+   48842 instâncias, mistura de contínuo e discreto    (treino=32561, teste=16281)
+   45222 se instâncias com valores desconhecidos forem removidas (treino=30162, teste=15060)
+   Dividido em treino-teste usando MLC++ GenCVFiles (2/3, 1/3 aleatório).
+
+6. Número de Atributos 
+   6 contínuos, 8 atributos nominais.
+
+7. Informação dos Atributos: 
+
+idade: contínuo.
+classe trabalhadora: Privado, Autônomo-não-incorporado, Autônomo-incorporado, Governo Federal, Governo Local, Governo Estadual, Sem pagamento, Nunca trabalhou.
+fnlwgt: contínuo.
+educação: Bacharelado, Algum-colégio, 11º, Ensino médio, Escola profissional, Assoc-acdm, Assoc-voc, 9º, 7º-8º, 12º, Mestrado, 1º-4º, 10º, Doutorado, 5º-6º, Pré-escola.
+número de educação: contínuo.
+estado civil: Casado-cônjuge-civ, Divorciado, Nunca casado, Separado, Viúvo, Casado-cônjuge-ausente, Casado-AF-cônjuge.
+ocupação: Suporte técnico, Reparo de artesanato, Outro serviço, Vendas, Gerente executivo, Especialidade profissional, Limpadores-manipuladores, Operador de máquina-inspct, Administrativo-clerical, Agricultura-pesca, Transporte-movimento, Serviço doméstico privado, Serviço protetor, Forças Armadas.
+relacionamento: Esposa, Filho próprio, Marido, Não na família, Outro parente, Não casado.
+raça: Branco, Asiático-Pacífico-Ilhéu, Amer-Indiano-Eskimo, Outro, Negro.
+sexo: Feminino, Masculino.
+ganho de capital: contínuo.
+perda de capital: contínuo.
+horas por semana: contínuo.
+país de origem: Estados Unidos, Camboja, Inglaterra, Porto Rico, Canadá, Alemanha, Territórios externos dos EUA(Guam-USVI-etc), Índia, Japão, Grécia, Sul, China, Cuba, Irã, Honduras, Filipinas, Itália, Polônia, Jamaica, Vietnã, México, Portugal, Irlanda, França, República Dominicana, Laos, Equador, Taiwan, Haiti, Colômbia, Hungria, Guatemala, Nicarágua, Escócia, Tailândia, Iugoslávia, El Salvador, Trinadad&Tobago, Peru, Hong, Holanda-Holanda.
+classe: >50K, <=50K
+
+8. Valores de Atributos Faltando: 
+
+   7% têm valores faltando.
+
+9. Distribuição de Classe: 
+
+ Probabilidade para o rótulo '>50K'  : 23.93% / 24.78% (sem desconhecidos)
+ Probabilidade para o rótulo '<=50K' : 76.07% / 75.22% (sem desconhecidos)
