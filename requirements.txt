@@ -1,3 +1,6 @@
 pandas
 matplotlib
 numpy
+seaborn
+scikit-learn
+umap-learn
