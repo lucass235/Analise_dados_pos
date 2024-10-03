@@ -6,3 +6,4 @@ scikit-learn
 umap-learn
 imbalanced-learn
 scikit-posthocs
+sklearn-lvq
