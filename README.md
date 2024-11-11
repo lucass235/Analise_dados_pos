@@ -13,3 +13,9 @@ Esses dados foram coletados de participantes em eventos experimentais de speed d
 ### Objetivo
 
 O objetivo é prever se um participante gostaria de ver seu par novamente.
+
+### Colaboradores
+
+- [Davi da Silva](https://github.com/davi23code)
+
+- [Lucas dos Santos](https://github.com/lucass235)
