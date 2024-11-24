@@ -7,3 +7,7 @@ umap-learn
 imbalanced-learn
 scikit-posthocs
 sklearn-lvq
+xgboost
+lightgbm
+optuna
+memory_profiler
